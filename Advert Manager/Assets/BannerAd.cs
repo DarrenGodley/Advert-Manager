@@ -9,11 +9,11 @@ public class BannerAd : MonoBehaviour
     public string placementId = "bannerPlacement";
     public bool testMode = true;
 
+
     void Start()
     {
         Advertisement.Initialize(gameId, testMode);
         StartCoroutine(ShowBannerWhenReady());
-        Advertisement.Banner.SetPosition(BannerPosition.TOP_CENTER);
     }
         IEnumerator ShowBannerWhenReady()
         {
@@ -22,5 +22,9 @@ public class BannerAd : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
             }
             Advertisement.Banner.Show(placementId);
-        }    
+        }
+    public void ShowBannerAd()
+    {
+        Advertisement.Banner.Show(placementId);
+    }
 }

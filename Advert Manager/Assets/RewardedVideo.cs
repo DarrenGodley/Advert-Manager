@@ -11,7 +11,7 @@ public class RewardedVideo : MonoBehaviour, IUnityAdsListener
     private string gameId = "3483556";
     bool testMode = true;
 
-
+    public string placementId = "bannerPlacement";
     public string myPlacementId = "rewardedVideo";
 
     // Start is called before the first frame update
@@ -28,6 +28,7 @@ public class RewardedVideo : MonoBehaviour, IUnityAdsListener
         // Initialize the Ads listener and service:
         Advertisement.AddListener(this);
         Advertisement.Initialize(gameId, testMode);
+        StartCoroutine(ShowBannerWhenReady());
 
     }
 
@@ -64,6 +65,27 @@ public class RewardedVideo : MonoBehaviour, IUnityAdsListener
         {
             Debug.LogWarning("The ad did not finish due to an error.");
         }
+    }
+
+    IEnumerator ShowBannerWhenReady()
+    {
+        while (!Advertisement.IsReady(placementId))
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
+        Advertisement.Banner.Show(placementId);
+    }
+    public void ShowBannerAd()
+    {
+        Advertisement.Banner.Show(placementId);
+    }
+
+    public void ShowInterstitialAd()
+    {
+        // Initialize the Ads service:
+        Advertisement.Initialize(gameId, testMode);
+        // Show an ad:
+        Advertisement.Show();
     }
 
     public void OnUnityAdsDidError(string message)

@@ -103,6 +103,7 @@ PlayerSettings:
   xboxOneMonoLoggingLevel: 0
   xboxOneLoggingLevel: 1
   xboxOneDisableEsram: 0
+  xboxOneEnableTypeOptimization: 0
   xboxOnePresentImmediateThreshold: 0
   switchQueueCommandMemory: 0
   switchQueueControlMemory: 16384
@@ -755,10 +756,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 76ad506b-24e8-4193-8af8-1614eb36ff8c
+  cloudProjectId: 837d7d10-7831-4d3a-95f8-ef5f55ba339e
   framebufferDepthMemorylessMode: 0
-  projectName: Advert Manager
-  organizationId: t00187846
+  projectName: Advert Manager (1)
+  organizationId: darrengodley96
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

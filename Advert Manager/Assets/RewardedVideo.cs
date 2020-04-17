@@ -4,15 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
 
-
 public class RewardedVideo : MonoBehaviour, IUnityAdsListener
 {
+    public Text rewardText;
+    private int rewardCount = 0;
 
     private string gameId = "3483556";
     bool testMode = true;
 
-    public string placementId = "bannerPlacement";
-    public string myPlacementId = "rewardedVideo";
+    string placementId = "bannerPlacement";
+    string myPlacementId = "rewardedVideo";
 
     // Start is called before the first frame update
     void Start()
@@ -38,8 +39,6 @@ public class RewardedVideo : MonoBehaviour, IUnityAdsListener
         Advertisement.Show(myPlacementId);
     }
 
-
-
     // Implement IUnityAdsListener interface methods:
     public void OnUnityAdsReady(string placementId)
     {
@@ -56,6 +55,8 @@ public class RewardedVideo : MonoBehaviour, IUnityAdsListener
         if (showResult == ShowResult.Finished)
         {
             // Reward the user for watching the ad to completion.
+            rewardCount++;
+            rewardText.text = rewardCount.ToString();
         }
         else if (showResult == ShowResult.Skipped)
         {
@@ -96,16 +97,5 @@ public class RewardedVideo : MonoBehaviour, IUnityAdsListener
     public void OnUnityAdsDidStart(string placementId)
     {
         // Optional actions to take when the end-users triggers an ad.
-    }
-    public void hello()
-    {
-
-        print("Hello");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

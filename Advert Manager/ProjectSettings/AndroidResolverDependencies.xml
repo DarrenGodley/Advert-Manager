@@ -1,12 +1,12 @@
 <dependencies>
   <packages>
     <package>com.google.android.gms:play-services-ads:19.0.0</package>
-    <package>com.google.games:gpgs-plugin-support:0.9.64</package>
+    <package>com.google.games:gpgs-plugin-support:0.10.08</package>
   </packages>
   <files />
   <settings>
-    <setting name="androidAbis" value="armeabi-v7a" />
-    <setting name="bundleId" value="com.DefaultCompany.AdvertManager" />
+    <setting name="androidAbis" value="arm64-v8a,armeabi-v7a" />
+    <setting name="bundleId" value="com.AdvertManager" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />
     <setting name="gradleTemplateEnabled" value="False" />
